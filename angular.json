@@ -11,26 +11,26 @@
           "inlineStyle": true
         }
       },
-      "root": "projects/lessonquest",
-      "sourceRoot": "projects/lessonquest/src",
+      "root": "",
+      "sourceRoot": "src",
       "prefix": "quest",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/lessonquest",
-            "index": "projects/lessonquest/src/index.html",
-            "browser": "projects/lessonquest/src/main.ts",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "projects/lessonquest/tsconfig.app.json",
+            "tsConfig": "tsconfig.app.json",
             "assets": [
-              "projects/lessonquest/src/favicon.ico",
-              "projects/lessonquest/src/assets"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              "projects/lessonquest/src/styles.css"
+              "src/styles.css"
             ],
             "scripts": []
           },
@@ -81,16 +81,16 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": ["zone.js", "zone.js/testing"],
-            "tsConfig": "projects/lessonquest/tsconfig.spec.json",
-            "karmaConfig": "projects/lessonquest/karma.conf.js",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
             "codeCoverage": true,
-             "assets": [
-              "projects/lessonquest/src/favicon.ico",
-              "projects/lessonquest/src/assets"
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              "projects/lessonquest/src/styles.css"
+              "src/styles.css"
             ],
             "scripts": [],
             "codeCoverageExclude": []
@@ -102,8 +102,8 @@
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": [
-              "projects/lessonquest/**/*.ts",
-              "projects/lessonquest/**/*.html"
+              "src/**/*.ts",
+              "src/**/*.html"
             ]
           }
         }
