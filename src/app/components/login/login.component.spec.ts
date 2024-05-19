@@ -53,10 +53,13 @@ describe('LoginComponent', () => {
   });
 
   it('should call login service with a user name', () => {
+    const fakeEmail = 'fake@example.com';
+    const fakePassword = 'fakePassword';
+
     (repoService.login as jasmine.Spy).and.returnValue(of({ token: 'token' }));
     component.loginForm.setValue({
-      email: 'test',
-      password: 'test',
+      email: fakeEmail,
+      password: fakePassword,
     });
     component.onSubmit();
     expect(repoService.login).toHaveBeenCalled();
@@ -64,8 +67,11 @@ describe('LoginComponent', () => {
   });
 
   it('should call login service with an email', () => {
+    const fakeEmail = 'fake@example.com';
+    const fakePassword = 'fakePassword';
+
     (repoService.login as jasmine.Spy).and.returnValue(of({ token: 'token' }));
-    component.loginForm.setValue({ email: 'test@sample.com', password: 'test' });
+    component.loginForm.setValue({ email: fakeEmail, password: fakePassword });
     component.onSubmit();
     expect(repoService.login).toHaveBeenCalled();
     expect(service.setLogin).toHaveBeenCalled();
