@@ -4,7 +4,6 @@ import {
   CanActivateFn,
   RouterStateSnapshot,
 } from '@angular/router';
-
 import { loggedGuard } from './logged.guard';
 import { StateService } from '../services/state.service';
 

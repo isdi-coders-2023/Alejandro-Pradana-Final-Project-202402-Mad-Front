@@ -1,7 +1,6 @@
 import { CanActivateFn } from '@angular/router';
 import { State, StateService } from '../services/state.service';
 import { inject } from '@angular/core';
-
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const loggedGuard: CanActivateFn = (_route, _state) => {
   const stateService = inject(StateService);
