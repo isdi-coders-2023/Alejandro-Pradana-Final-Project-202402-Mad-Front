@@ -24,7 +24,7 @@ module.exports = function (config) {
       clearContext: false, // leave Jasmine Spec Runner output visible in browser
     },
     preprocessor: {
-      "src/*/!(spec|*mock).js": ["coverage"],
+      "src/**/*.ts": ["coverage"],
     },
     jasmineHtmlReporter: {
       suppressAll: true, // removes the duplicated traces
@@ -32,7 +32,7 @@ module.exports = function (config) {
     coverageReporter: {
       dir: require("path").join(__dirname, "coverage/"),
       subdir: ".",
-      reporters: [{ type: "lcov" }, { type: "text" }],
+      reporters: [{ type: "lcov" }, { type: "text-summary" }],
     },
     reporters: ["mocha", "kjhtml"],
     browsers: ["Chrome"],
