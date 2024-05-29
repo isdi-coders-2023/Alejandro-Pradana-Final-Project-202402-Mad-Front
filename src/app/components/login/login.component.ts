@@ -13,8 +13,8 @@ import { FooterComponent } from "../footer/footer.component";
     template: `
   <header class="header">
     <div class="logo-container">
-       <span class="logo-text">Lessonquest</span>
-       <img class="logo-icon" src="assets/favicon.svg" alt="Logo image">
+      <span class="logo-text">Lessonquest</span>
+      <img class="logo-icon" src="assets/favicon.svg" alt="Logo image">
     </div>
   </header>
   <section class="login-box">
@@ -70,7 +70,7 @@ import { FooterComponent } from "../footer/footer.component";
   }
 .login-box {
   position: fixed;
-   top: 0;
+  top: 0;
     left: 0;
     right: 0;
   background-image: url('https://res.cloudinary.com/djzn9f9kc/image/upload/v1715865441/3636480cef66da8a4def4347eb46c770_fkqbd0.jpg');
