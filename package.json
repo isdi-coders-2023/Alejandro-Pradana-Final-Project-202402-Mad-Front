@@ -7,9 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --code-coverage --browsers=ChromeHeadless",
-    "test:prod": "ng test --watch=false --code-coverage --browsers=ChromeHeadless --passWithNoTest",
-    "lint": "ng lint",
-    "prepare": "husky"
+    "test:prod": "ng test --code-coverage --no-watch --browsers=ChromeHeadless"
   },
   "private": true,
   "dependencies": {
