@@ -4,39 +4,75 @@ import { UsersRepoService } from '../../services/users.repo.service';
 import { StateService } from '../../services/state.service';
 import { UserLoginDto } from '../../models/user.model';
 import { Router ,RouterModule } from '@angular/router';
+import { FooterComponent } from "../footer/footer.component";
 
 @Component({
-  selector: 'quest-login',
-  standalone: true,
-  imports: [ReactiveFormsModule, RouterModule],
-  template: `
+    selector: 'quest-login',
+    standalone: true,
+    imports: [ReactiveFormsModule, RouterModule, FooterComponent],
+    template: `
+  <header class="header">
+    <div class="logo-container">
+       <span class="logo-text">Lessonquest</span>
+       <img class="logo-icon" src="assets/favicon.svg" alt="Logo image">
+    </div>
+  </header>
   <section class="login-box">
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
     <div class="login-title">
-      <h2>Login</h2>
+      <h2>Iniciar sesión</h2>
     </div>
     <label for="email">Email</label>
-    <input type="email" id="email" formControlName="email">
+    <input type="email" id="email" formControlName="email" placeholder="nombre@mail.com">
     <label for="password">Contraseña</label>
-    <input type="password" id="password" formControlName="password">
+    <input type="password" id="password" formControlName="password" placeholder="*****">
     <div class="button-box">
-    <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
+    <button class="entry-button" type="submit" [disabled]="loginForm.invalid">Entrar</button>
     <button (click)="onClickRegister()">Registro</button>
     </div>
   </form>
 </section>
+<quest-footer></quest-footer>
   `,
-  styles: `
-  body {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-family: Arial, sans-serif;
-}
+    styles: `
 
+.header {
+  background: rgba(255, 255, 255, 0.8);
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 10px;
+  }
+ .logo-text {
+    font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      font-weight: 550;
+      color: black;
+      position: relative;
+      top: 6px;
+  }
+.logo-icon {
+    width: 25px;
+      margin-right: 5px;
+  }
 .login-box {
+  position: fixed;
+   top: 0;
+    left: 0;
+    right: 0;
   background-image: url('https://res.cloudinary.com/djzn9f9kc/image/upload/v1715865441/3636480cef66da8a4def4347eb46c770_fkqbd0.jpg');
   background-size: cover;
   background-position: center;
@@ -50,15 +86,17 @@ import { Router ,RouterModule } from '@angular/router';
 
 .login-form {
   background: rgba(255, 255, 255, 0.8);
-  padding: 20px;
+  padding: 10px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
-  width: 90%;
+  gap: 10px;
+  width: 45%;
   max-width: 400px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  position: relative;
+  bottom: 10px;
 }
 
 .login-title {
@@ -100,12 +138,17 @@ button {
   font-size: 16px;
   cursor: pointer;
   margin: 20px;
+  transition: transform 0.3s ease;
 }
 
 .button-box {
   display: flex;
   justify-content: space-around;
 
+}
+
+.entry-button {
+  background-color: rgba(65, 217, 238, 1);
 }
 
 @media (min-width: 600px) {
@@ -122,7 +165,8 @@ button {
     font-size: 28px;
   }
 }
-  `
+  `,
+
 })
 export default class LoginComponent {
   private repo = inject(UsersRepoService);
