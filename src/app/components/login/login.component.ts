@@ -56,7 +56,7 @@ import { FooterComponent } from "../footer/footer.component";
     position: relative;
     left: 10px;
   }
- .logo-text {
+.logo-text {
     font-family: "Poppins", sans-serif;
       font-size: 14px;
       font-weight: 550;
